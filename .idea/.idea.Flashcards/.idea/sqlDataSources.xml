@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="71ce204c-1c87-4642-862a-6123fbbabee6" name="Microsoft SQL Server LocalDB (JetBrains) (DDL) Mapping">
+      <data-sources db="1b0ba5a6-0750-49a5-aa66-99829180ead5" ddl="6c4f5251-e483-4ae8-80fe-75f73bec9d78" />
+      <scope>
+        <node kind="database" qname="flashcards">
+          <node kind="schema" qname="dbo" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>
