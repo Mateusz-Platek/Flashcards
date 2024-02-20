@@ -34,9 +34,9 @@ public class SessionsRepository
         return sessions;
     }
 
-    public List<StackSession> GetSessionsReport(int year)
+    public List<StackSessionDTO> GetSessionsReport(int year)
     {
-        List<StackSession> stackSessions = new List<StackSession>();
+        List<StackSessionDTO> stackSessions = new List<StackSessionDTO>();
 
         using SqlConnection sqlConnection = new SqlConnection(@"Server=(localdb)\Flashcards;Database=flashcards;Trusted_Connection=True;");
         sqlConnection.Open();
@@ -52,7 +52,7 @@ public class SessionsRepository
         {
             while (sqlDataReader.Read())
             {
-                Dictionary<string,int> sessions = new Dictionary<string, int>();
+                Dictionary<string, int> sessions = new Dictionary<string, int>();
                 
                 sessions.Add("January", sqlDataReader.GetInt32(1));
                 sessions.Add("February", sqlDataReader.GetInt32(2));
@@ -67,7 +67,7 @@ public class SessionsRepository
                 sessions.Add("November", sqlDataReader.GetInt32(11));
                 sessions.Add("December", sqlDataReader.GetInt32(12));
 
-                StackSession stackSession = new StackSession(sqlDataReader.GetString(0), sessions);
+                StackSessionDTO stackSession = new StackSessionDTO(sqlDataReader.GetString(0), sessions);
                 
                 stackSessions.Add(stackSession);
             }
@@ -76,9 +76,9 @@ public class SessionsRepository
         return stackSessions;
     }
 
-    public List<StackScore> GetSessionsScore(int year)
+    public List<StackScoreDTO> GetSessionsScore(int year)
     {
-        List<StackScore> stackScores = new List<StackScore>();
+        List<StackScoreDTO> stackScores = new List<StackScoreDTO>();
         
         using SqlConnection sqlConnection = new SqlConnection(@"Server=(localdb)\Flashcards;Database=flashcards;Trusted_Connection=True;");
         sqlConnection.Open();
@@ -95,7 +95,7 @@ public class SessionsRepository
         {
             while (sqlDataReader.Read())
             {
-                Dictionary<string,double> scores = new Dictionary<string, double>();
+                Dictionary<string, double> scores = new Dictionary<string, double>();
                 
                 scores.Add("January", sqlDataReader.GetDouble(1));
                 scores.Add("February", sqlDataReader.GetDouble(2));
@@ -110,7 +110,7 @@ public class SessionsRepository
                 scores.Add("November", sqlDataReader.GetDouble(11));
                 scores.Add("December", sqlDataReader.GetDouble(12));
 
-                StackScore stackScore = new StackScore(sqlDataReader.GetString(0), scores);
+                StackScoreDTO stackScore = new StackScoreDTO(sqlDataReader.GetString(0), scores);
 
                 stackScores.Add(stackScore);
             }

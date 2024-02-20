@@ -57,9 +57,9 @@ public static class SessionController
             .AddColumn("[bold darkblue]November[/]")
             .AddColumn("[bold purple]December[/]");
 
-        List<StackSession> sessionsReport = sessionsRepository.GetSessionsReport(year);
+        List<StackSessionDTO> sessionsReport = sessionsRepository.GetSessionsReport(year);
 
-        foreach (StackSession stackSession in sessionsReport)
+        foreach (StackSessionDTO stackSession in sessionsReport)
         {
             table.AddRow(
                 $"[bold navy]{stackSession.name}[/]",
@@ -105,9 +105,9 @@ public static class SessionController
             .AddColumn("[bold darkblue]November[/]")
             .AddColumn("[bold purple]December[/]");
 
-        List<StackScore> sessionsScore = sessionsRepository.GetSessionsScore(year);
+        List<StackScoreDTO> sessionsScore = sessionsRepository.GetSessionsScore(year);
         
-        foreach (StackScore stackScore in sessionsScore)
+        foreach (StackScoreDTO stackScore in sessionsScore)
         {
             table.AddRow(
                 $"[bold navy]{stackScore.name}[/]",

@@ -10,9 +10,4 @@ public class Stack
         this.stackId = stackId;
         this.name = name;
     }
-
-    public StackDTO ToStackDTO()
-    {
-        return new StackDTO(name);
-    }
 }

@@ -31,6 +31,31 @@ public class FlashcardsRepository
 
         return flashcards;
     }
+    
+    public List<FlashcardDTO> GetFlashcardsDTOOfStack(string stackName)
+    {
+        List<FlashcardDTO> flashcards = new List<FlashcardDTO>();
+        
+        using SqlConnection sqlConnection = new SqlConnection(@"Server=(localdb)\Flashcards;Database=flashcards;Trusted_Connection=True;");
+        sqlConnection.Open();
+        SqlCommand sqlCommand = sqlConnection.CreateCommand();
+        sqlCommand.CommandText = $"SELECT * FROM flashcards JOIN stacks ON flashcards.stack_id = stacks.stack_id WHERE name = '{stackName}'";
+        
+        SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+        if (sqlDataReader.HasRows)
+        {
+            while (sqlDataReader.Read())
+            {
+                FlashcardDTO flashcard = new FlashcardDTO(
+                    sqlDataReader.GetString(2),
+                    sqlDataReader.GetString(3)
+                );
+                flashcards.Add(flashcard);
+            }
+        }
+
+        return flashcards;
+    }
 
     public void AddFlashcard(int stackId, string word, string translation)
     {

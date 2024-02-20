@@ -34,9 +34,9 @@ public static class FlashcardController
             .AddColumn("[bold darkorange]Word[/]")
             .AddColumn("[bold purple]Translation[/]");
 
-        List<Flashcard> flashcardsOfStack = flashcardsRepository.GetFlashcardsOfStack(stackName);
+        List<FlashcardDTO> flashcardsOfStack = flashcardsRepository.GetFlashcardsDTOOfStack(stackName);
         
-        foreach (Flashcard flashcard in flashcardsOfStack)
+        foreach (FlashcardDTO flashcard in flashcardsOfStack)
         {
             table.AddRow(
                 $"[bold yellow]{flashcardsOfStack.IndexOf(flashcard) + 1}[/]", 
