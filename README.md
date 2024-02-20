@@ -13,34 +13,34 @@ Also user can generate reports about average scores and number of sessions per m
 - At the start of the program you can choose to insert
 dummy data or launch empty program.
 
-![start](/screenshots/1.png)
+![start](/screenshots/1.PNG)
 
 - Console UI
 
-![menu](/screenshots/2.png)
+![menu](/screenshots/2.PNG)
 
 - Study your flashcards
 
-![correct answer](/screenshots/5.png)
+![correct answer](/screenshots/5.PNG)
 
-![incorrect answer](/screenshots/6.png)
+![incorrect answer](/screenshots/6.PNG)
 
-![summary](/screenshots/7.png)
+![summary](/screenshots/7.PNG)
 
 - Manage your stacks
 
-![stack menu](/screenshots/8.png)
+![stack menu](/screenshots/8.PNG)
 
-![stack list](/screenshots/9.png)
+![stack list](/screenshots/9.PNG)
 
 - Manage your flashcards
 
-![flashcard menu](/screenshots/10.png)
+![flashcard menu](/screenshots/10.PNG)
 
-![flashcard list](/screenshots/11.png)
+![flashcard list](/screenshots/11.PNG)
 
 - Generating reports about your studying sessions
 
-![session counter](/screenshots/3.png)
+![session counter](/screenshots/3.PNG)
 
-![session score](/screenshots/4.png)
+![session score](/screenshots/4.PNG)
